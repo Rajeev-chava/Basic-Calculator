@@ -13,7 +13,7 @@
   --display-text: #2f3542;
 }
 
-body.dark {
+body.dark-mode {
   --bg-color: #2f3542;
   --text-color: #f1f2f6;
   --btn-number-bg: #3498db;
@@ -24,10 +24,9 @@ body.dark {
   --btn-func-hover: #c0392b;
   --btn-text-dark: #ffffff;
   --btn-text-light: #ffffff;
-   --display-bg: #404756;
+  --display-bg: #404756;
   --display-text: #ffffff;
 }
-
 
 body {
   background: var(--bg-color);
@@ -41,79 +40,21 @@ body {
 }
 
 .calculator {
-  background: var(--history-bg);
+  background: var(--bg-color);
   padding: 20px;
   border-radius: 15px;
   width: 300px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-/* Base Button */
-.btn.number {
-  background-color: var(--btn-number-bg);
-  color: var(--btn-text-light);
-}
-.btn.number:hover {
-  background-color: var(--btn-number-hover);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.btn.operator {
-  background-color: var(--btn-operator-bg);
-  color: var(--btn-text-dark);
-}
-.btn.operator:hover {
-  background-color: var(--btn-operator-hover);
-  color: var(--btn-text-light);
-}
-
-.btn.func {
-  background-color: var(--btn-func-bg);
-  color: var(--btn-text-light);
-}
-.btn.func:hover {
-  background-color: var(--btn-func-hover);
-}
-
-
-/* Numbers (Blue) */
-.btn.number {
-  background-color: #74b9ff;
-  color: white;
-}
-.btn.number:hover {
-  background-color: #0984e3;
-}
-
-/* Operators (+, -, *, /, =) */
-.btn.operator {
-  background-color: #fdcb6e;
-  color: #2d3436;
-}
-.btn.operator:hover {
-  background-color: #e17055;
-  color: white;
-}
-
-/* Functional Buttons (C, ←) */
-.btn.func {
-  background-color: #ff7675;
-  color: white;
-}
-.btn.func:hover {
-  background-color: #d63031;
-}
-
-/* Active effect */
-button:active {
-  transform: scale(0.95);
-}
-
-
+/* Top Bar */
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Display */
 #display {
   width: 100%;
   height: 50px;
@@ -127,6 +68,54 @@ button:active {
   color: var(--display-text);
 }
 
+/* Buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+button:active {
+  transform: scale(0.95);
+}
+
+/* Number Buttons */
+.btn.number {
+  background-color: var(--btn-number-bg);
+  color: var(--btn-text-light);
+}
+.btn.number:hover {
+  background-color: var(--btn-number-hover);
+}
+
+/* Operator Buttons */
+.btn.operator {
+  background-color: var(--btn-operator-bg);
+  color: var(--btn-text-dark);
+}
+.btn.operator:hover {
+  background-color: var(--btn-operator-hover);
+  color: var(--btn-text-light);
+}
+
+/* Functional Buttons (C, ←) */
+.btn.func {
+  background-color: var(--btn-func-bg);
+  color: var(--btn-text-light);
+}
+.btn.func:hover {
+  background-color: var(--btn-func-hover);
+}
+
+/* Clear History Button */
 #clearHistoryBtn {
   margin-top: 10px;
   padding: 10px;
@@ -139,44 +128,17 @@ button:active {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 #clearHistoryBtn:hover {
   background-color: #ff4d4d;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-button {
-  padding: 20px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--button-color);
-  cursor: pointer;
-  transition: transform 0.1s, background 0.2s;
-}
-
-button:hover {
-  background-color: var(--button-hover);
-}
-
-button:active {
-  transform: scale(0.95);
-  background-color: var(--button-active);
-}
-
+/* History Section */
 .history {
   margin-top: 20px;
 }
-
 .history h3 {
   margin-bottom: 5px;
 }
-
 #historyList {
   list-style: none;
   padding: 0;
@@ -185,13 +147,16 @@ button:active {
   font-size: 14px;
 }
 
+/* Toggle Switch */
 .switch {
   position: relative;
   display: inline-block;
   width: 40px;
   height: 24px;
 }
-.switch input { display: none; }
+.switch input {
+  display: none;
+}
 .slider {
   position: absolute;
   cursor: pointer;
@@ -199,35 +164,17 @@ button:active {
   right: 0; bottom: 0;
   background-color: #ccc;
   border-radius: 24px;
-  transition: .4s;
+  transition: 0.4s;
 }
-@media (max-width: 400px) {
-  .calculator {
-    width: 90%;
-    padding: 15px;
-  }
-
-  button {
-    padding: 15px;
-    font-size: 16px;
-  }
-
-  #display {
-    font-size: 20px;
-  }
-
-  #clearHistoryBtn {
-    font-size: 12px;
-  }
-}
-
 .slider:before {
   position: absolute;
   content: "";
-  height: 18px; width: 18px;
-  left: 3px; bottom: 3px;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 input:checked + .slider {
@@ -235,4 +182,22 @@ input:checked + .slider {
 }
 input:checked + .slider:before {
   transform: translateX(16px);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .calculator {
+    width: 90%;
+    padding: 15px;
+  }
+  button {
+    padding: 15px;
+    font-size: 16px;
+  }
+  #display {
+    font-size: 20px;
+  }
+  #clearHistoryBtn {
+    font-size: 12px;
+  }
 }
