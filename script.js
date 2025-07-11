@@ -34,7 +34,10 @@ function calculate() {
 function addToHistory(entry) {
   const li = document.createElement('li');
   li.textContent = entry;
-  historyList.appendChild(li);
+  historyList.prepend(li);
+  if (historyList.children.length > 10) {
+    historyList.removeChild(historyList.lastChild);
+  }
 }
 
 // Clear history
@@ -49,21 +52,24 @@ darkToggle.addEventListener('change', () => {
 
 // Keyboard support
 document.addEventListener('keydown', (e) => {
-  const key = e.key;
+  // Prevent virtual keyboard issues by checking if input is readonly
+  if (e.target === display) {
+    e.preventDefault(); // Completely ignore keyboard input in the field
+    return;
+  }
 
+  const key = e.key;
   if (key.match(/[0-9+\-*/.]/)) {
+    e.preventDefault();
     appendValue(key);
   } else if (key === 'Enter') {
     e.preventDefault();
     calculate();
   } else if (key === 'Backspace') {
-    deleteLast();
-  } else if (key.toLowerCase() === 'c') {
-    clearDisplay();
-  } else if (key === 'Escape') {
-    clearDisplay();
-  } else {
-    // Prevent typing invalid characters
     e.preventDefault();
+    deleteLast();
+  } else if (key.toLowerCase() === 'c' || key === 'Escape') {
+    e.preventDefault();
+    clearDisplay();
   }
 });

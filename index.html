@@ -16,42 +16,41 @@
       </label>
     </div>
 
-    <input type="text" id="display" inputmode="decimal" />
+    <!-- Changed inputmode="decimal" to readonly to prevent mobile double input -->
+    <input type="text" id="display" readonly tabindex="-1" />
 
     <div class="buttons">
-     <!-- Row 1 -->
-<button class="btn func" onclick="clearDisplay()">C</button>
-<button class="btn operator" onclick="appendValue('/')">/</button>
-<button class="btn operator" onclick="appendValue('*')">*</button>
-<button class="btn func" onclick="deleteLast()">←</button>
+      <!-- Row 1 -->
+      <button class="btn func" onclick="clearDisplay()">C</button>
+      <button class="btn operator" onclick="appendValue('/')">/</button>
+      <button class="btn operator" onclick="appendValue('*')">*</button>
+      <button class="btn func" onclick="deleteLast()">←</button>
 
-<!-- Numbers -->
-<button class="btn number" onclick="appendValue('7')">7</button>
-<button class="btn number" onclick="appendValue('8')">8</button>
-<button class="btn number" onclick="appendValue('9')">9</button>
-<button class="btn operator" onclick="appendValue('-')">-</button>
+      <!-- Numbers -->
+      <button class="btn number" onclick="appendValue('7')">7</button>
+      <button class="btn number" onclick="appendValue('8')">8</button>
+      <button class="btn number" onclick="appendValue('9')">9</button>
+      <button class="btn operator" onclick="appendValue('-')">-</button>
 
-<button class="btn number" onclick="appendValue('4')">4</button>
-<button class="btn number" onclick="appendValue('5')">5</button>
-<button class="btn number" onclick="appendValue('6')">6</button>
-<button class="btn operator" onclick="appendValue('+')">+</button>
+      <button class="btn number" onclick="appendValue('4')">4</button>
+      <button class="btn number" onclick="appendValue('5')">5</button>
+      <button class="btn number" onclick="appendValue('6')">6</button>
+      <button class="btn operator" onclick="appendValue('+')">+</button>
 
-<button class="btn number" onclick="appendValue('1')">1</button>
-<button class="btn number" onclick="appendValue('2')">2</button>
-<button class="btn number" onclick="appendValue('3')">3</button>
-<button class="btn operator" onclick="calculate()">=</button>
+      <button class="btn number" onclick="appendValue('1')">1</button>
+      <button class="btn number" onclick="appendValue('2')">2</button>
+      <button class="btn number" onclick="appendValue('3')">3</button>
+      <button class="btn operator" onclick="calculate()">=</button>
 
-<button class="btn number" onclick="appendValue('0')">0</button>
-<button class="btn number" onclick="appendValue('.')">.</button>
-
+      <button class="btn number" onclick="appendValue('0')">0</button>
+      <button class="btn number" onclick="appendValue('.')">.</button>
     </div>
 
     <div class="history">
-  <h3>History</h3>
-  <ul id="historyList"></ul>
-  <button id="clearHistoryBtn">Clear History</button>
-</div>
-
+      <h3>History</h3>
+      <ul id="historyList"></ul>
+      <button id="clearHistoryBtn">Clear History</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
