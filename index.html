@@ -16,8 +16,11 @@
       </label>
     </div>
 
-    <!-- Input is readonly to prevent mobile double input -->
-    <input type="text" id="display" readonly tabindex="-1" />
+    <!-- Fake input for keyboard support -->
+    <input type="text" id="keyboardInput" aria-hidden="true" style="position: absolute; opacity: 0; pointer-events: none;" />
+    
+    <!-- Main display input -->
+    <input type="text" id="display" readonly />
 
     <div class="buttons">
       <button class="btn func" onclick="clearDisplay()">C</button>

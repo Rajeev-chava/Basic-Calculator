@@ -1,41 +1,47 @@
 # 🔢 Basic Calculator
 
-A responsive and interactive web-based calculator built using **HTML, CSS, and JavaScript**. It supports dark mode, keyboard input, and displays the history of calculations. Mobile-friendly and deployable via GitHub Pages.
+A responsive and interactive web-based calculator built using **HTML, CSS, and JavaScript**. It supports dark mode, keyboard input, and displays a history of calculations. Mobile-friendly and deployable via GitHub Pages.
+
+---
 
 ## 🚀 Features
 
 - ✅ Responsive UI for desktop and mobile
 - 🌙 Dark Mode toggle
-- ⌨️ Keyboard support for all operations
-- 🧮 Calculation history with "Clear History" option
-- 🎨 Interactive buttons with visual feedback
+- ⌨️ Full keyboard support
+- 🧮 Real-time calculation history (up to last 10)
+- 🗑️ Clear history button
+- 📱 Mobile-optimized input (no double-entry bug)
+- 🎨 Clean UI with hover/active animations
+
+---
 
 ## 📸 Preview
 
-![Calculator Screenshot](screenshot.png)
+![Calculator Screenshot](screenshot.png)  
+*Dark mode & mobile ready*
+
+---
 
 ## 🔗 Live Demo
 
 👉 [View Calculator on GitHub Pages](https://rajeev-chava.github.io/Basic-Calculator/)
 
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Tools**: Git, VS Code, GitHub Pages
-
-## 📁 Project Structure
-
-
-
-
-
-## 🙋‍♂️ Author
-
-**Chava Rajeev**  
-📫 [LinkedIn](https://linkedin.com/in/chavarajeev) | ✉️ 22jr5a1207@gmail.com
+- **Tools**: Git, GitHub, VS Code, GitHub Pages
 
 ---
 
-## 📌 License
+## 📁 Project Structure
 
-This project is open source and free to use under the [MIT License](LICENSE).
+```plaintext
+Basic-Calculator/
+├── index.html        # Main HTML layout
+├── styles.css        # All styles (light/dark themes)
+├── script.js         # Calculator logic and keyboard handling
+├── screenshot.png    # Preview image
+└── README.md         # This file

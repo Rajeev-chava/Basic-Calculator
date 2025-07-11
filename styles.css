@@ -68,7 +68,7 @@ body {
   color: var(--display-text);
 }
 
-/* Buttons */
+/* Buttons Grid */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -82,6 +82,9 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.1s, background 0.2s;
+}
+button:hover {
+  transform: scale(1.03);
 }
 button:active {
   transform: scale(0.95);
@@ -145,6 +148,23 @@ button:active {
   max-height: 100px;
   overflow-y: auto;
   font-size: 14px;
+}
+#historyList li {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar (optional) */
+#historyList::-webkit-scrollbar {
+  width: 6px;
+}
+#historyList::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 3px;
 }
 
 /* Toggle Switch */
