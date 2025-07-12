@@ -16,13 +16,6 @@ A responsive and interactive web-based calculator built using **HTML, CSS, and J
 
 ---
 
-## 📸 Preview
-
-![Calculator Screenshot](screenshot.png)  
-*Dark mode & mobile ready*
-
----
-
 ## 🔗 Live Demo
 
 👉 [View Calculator on GitHub Pages](https://rajeev-chava.github.io/Basic-Calculator/)
